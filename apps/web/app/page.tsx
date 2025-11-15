@@ -1,30 +1,30 @@
-import Image, { type ImageProps } from 'next/image'
-import styles from './page.module.css'
+import Image, { type ImageProps } from "next/image";
+import styles from "./page.module.css";
 
-type Props = Omit<ImageProps, 'src'> & {
-  srcLight: string
-  srcDark: string
-}
+type Props = Omit<ImageProps, "src"> & {
+  srcLight: string;
+  srcDark: string;
+};
 
 const ThemeImage = (props: Props) => {
-  const { srcLight, srcDark, ...rest } = props
+  const { srcLight, srcDark, ...rest } = props;
 
   return (
     <>
       <Image {...rest} src={srcLight} className="imgLight" alt="" />
       <Image {...rest} src={srcDark} className="imgDark" alt="" />
     </>
-  )
-}
+  );
+};
 
 const API_URL = process.env.VERCEL
-  ? 'https://hono-turborepo-api-demo.vercel.app'
-  : 'http://localhost:3000'
+  ? "https://hono-turborepo-api-demo.vercel.app"
+  : "http://localhost:3000";
 
 export default async function Home() {
   const result = await fetch(API_URL)
     .then((res) => res.text())
-    .catch(() => 'Hello from Hono!')
+    .catch(() => "Hello from Hono!");
 
   return (
     <div className={styles.page}>
@@ -72,7 +72,7 @@ export default async function Home() {
         </div>
         <div className={styles.result}>
           <h3>
-            API Response from{' '}
+            API Response from{" "}
             <a href={API_URL} target="_blank" rel="noreferrer">
               <code>{API_URL}</code>
             </a>
@@ -112,5 +112,5 @@ export default async function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }

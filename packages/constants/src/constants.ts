@@ -1,1 +1,1 @@
-export const CONSTANT = 'Hello from your Hono API!'
+export const CONSTANT = "Hello from your Hono API!";
