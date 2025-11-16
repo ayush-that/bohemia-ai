@@ -1,6 +1,7 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import { getEnv } from "../config/env.js";
+import * as schema from "./schema/index.js";
 
 let connection: ReturnType<typeof postgres> | null = null;
 let db: ReturnType<typeof drizzle> | null = null;
@@ -17,7 +18,7 @@ export function getDb() {
     ssl: { rejectUnauthorized: false },
   });
 
-  db = drizzle(connection);
+  db = drizzle(connection, { schema });
 
   return db;
 }
