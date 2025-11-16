@@ -40,3 +40,4 @@ CLAUDE.md
 .cursor
 docs/
 .claude
+.pnpm-store
