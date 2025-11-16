@@ -15,5 +15,8 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": "22.x"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0"
   }
 }
