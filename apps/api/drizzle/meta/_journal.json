@@ -1,0 +1,13 @@
+{
+  "version": "6",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1763278819368,
+      "tag": "0000_pale_microchip",
+      "breakpoints": true
+    }
+  ]
+}
