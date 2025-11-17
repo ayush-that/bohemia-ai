@@ -152,7 +152,7 @@ app.post("/", zValidator("json", createAgentSchema), async (c) => {
         description: agentData.description,
         instructions: agentData.instructions,
         llmProvider: "openai",
-        llmModel: "gpt-4o-mini",
+        llmModel: "microsoft/phi-4",
         llmTemperature: agentData.llmTemperature ?? 0.7,
         llmMaxTokens: agentData.llmMaxTokens ?? 1000,
         sttProvider: "deepgram",

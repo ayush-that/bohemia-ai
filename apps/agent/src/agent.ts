@@ -61,6 +61,7 @@ export default defineAgent({
 
     const deepgramApiKey = process.env.DEEPGRAM_API_KEY;
     const openaiApiKey = process.env.OPENAI_API_KEY;
+    const openaiBaseUrl = process.env.OPENAI_BASE_URL;
     const elevenlabsApiKey = process.env.ELEVENLABS_API_KEY;
 
     const session = new voice.AgentSession({
@@ -71,8 +72,9 @@ export default defineAgent({
       }),
 
       llm: new openai.LLM({
-        model: "gpt-4o-mini",
+        model: "microsoft/phi-4",
         ...(openaiApiKey && { apiKey: openaiApiKey }),
+        ...(openaiBaseUrl && { baseURL: openaiBaseUrl }),
       }),
 
       tts: new elevenlabs.TTS({
