@@ -141,7 +141,7 @@ export default function Loader({
 
         {/* Dark mode variants */}
         <motion.div
-          className="absolute inset-0 rounded-full dark:block hidden"
+          className="absolute inset-0 hidden rounded-full dark:block"
           style={{
             background: `conic-gradient(from 0deg, transparent 0deg, rgb(255, 255, 255) 90deg, transparent 180deg)`,
             mask: `radial-gradient(circle at 50% 50%, transparent 35%, black 37%, black 39%, transparent 41%)`,
@@ -159,7 +159,7 @@ export default function Loader({
         />
 
         <motion.div
-          className="absolute inset-0 rounded-full dark:block hidden"
+          className="absolute inset-0 hidden rounded-full dark:block"
           style={{
             background: `conic-gradient(from 0deg, transparent 0deg, rgb(255, 255, 255) 120deg, rgba(255, 255, 255, 0.5) 240deg, transparent 360deg)`,
             mask: `radial-gradient(circle at 50% 50%, transparent 42%, black 44%, black 48%, transparent 50%)`,
@@ -177,7 +177,7 @@ export default function Loader({
         />
 
         <motion.div
-          className="absolute inset-0 rounded-full dark:block hidden"
+          className="absolute inset-0 hidden rounded-full dark:block"
           style={{
             background: `conic-gradient(from 180deg, transparent 0deg, rgba(255, 255, 255, 0.6) 45deg, transparent 90deg)`,
             mask: `radial-gradient(circle at 50% 50%, transparent 52%, black 54%, black 56%, transparent 58%)`,
@@ -195,7 +195,7 @@ export default function Loader({
         />
 
         <motion.div
-          className="absolute inset-0 rounded-full dark:block hidden"
+          className="absolute inset-0 hidden rounded-full dark:block"
           style={{
             background: `conic-gradient(from 270deg, transparent 0deg, rgba(255, 255, 255, 0.4) 20deg, transparent 40deg)`,
             mask: `radial-gradient(circle at 50% 50%, transparent 61%, black 62%, black 63%, transparent 64%)`,
@@ -231,7 +231,7 @@ export default function Loader({
         <motion.h1
           className={cn(
             config.titleClass,
-            "text-black/90 dark:text-white/90 font-medium tracking-[-0.02em] leading-[1.15] antialiased"
+            "font-medium leading-[1.15] tracking-[-0.02em] text-black/90 antialiased dark:text-white/90"
           )}
           initial={{ opacity: 0, y: 12 }}
           animate={{
@@ -262,7 +262,7 @@ export default function Loader({
         <motion.p
           className={cn(
             config.subtitleClass,
-            "text-black/60 dark:text-white/60 font-normal tracking-[-0.01em] leading-[1.45] antialiased"
+            "font-normal leading-[1.45] tracking-[-0.01em] text-black/60 antialiased dark:text-white/60"
           )}
           initial={{ opacity: 0, y: 8 }}
           animate={{

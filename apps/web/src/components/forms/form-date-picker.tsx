@@ -87,7 +87,7 @@ function FormDatePicker<
                   if (minDate && date < minDate) return true;
                   if (maxDate && date > maxDate) return true;
                   return disabledDates.some(
-                    (disabledDate) => date.getTime() === disabledDate.getTime(),
+                    (disabledDate) => date.getTime() === disabledDate.getTime()
                   );
                 }}
                 initialFocus

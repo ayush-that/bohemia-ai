@@ -12,12 +12,12 @@ const ResultItem = React.forwardRef(
       active: boolean;
       currentRootActionId: ActionId;
     },
-    ref: React.Ref<HTMLDivElement>,
+    ref: React.Ref<HTMLDivElement>
   ) => {
     const ancestors = React.useMemo(() => {
       if (!currentRootActionId) return action.ancestors;
       const index = action.ancestors.findIndex(
-        (ancestor) => ancestor.id === currentRootActionId,
+        (ancestor) => ancestor.id === currentRootActionId
       );
       return action.ancestors.slice(index + 1);
     }, [action.ancestors, currentRootActionId]);
@@ -30,7 +30,7 @@ const ResultItem = React.forwardRef(
         {active && (
           <div
             id="kbar-result-item"
-            className="border-primary bg-accent/50 absolute inset-0 z-[-1]! border-l-4"
+            className="border-primary bg-accent/50 z-[-1]! absolute inset-0 border-l-4"
           ></div>
         )}
         <div className="relative z-10 flex items-center gap-2">
@@ -69,7 +69,7 @@ const ResultItem = React.forwardRef(
         ) : null}
       </div>
     );
-  },
+  }
 );
 
 ResultItem.displayName = "KBarResultItem";

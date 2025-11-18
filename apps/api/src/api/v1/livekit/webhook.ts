@@ -24,4 +24,3 @@ app.post("/", async (c) => {
 });
 
 export default app;
-

@@ -63,7 +63,7 @@ function FormFileUpload<
               progresses={progresses}
               accept={acceptedTypes?.reduce(
                 (acc, type) => ({ ...acc, [type]: [] }),
-                {},
+                {}
               )}
               maxSize={maxSize}
               maxFiles={maxFiles}

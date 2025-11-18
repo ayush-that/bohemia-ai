@@ -29,7 +29,7 @@ export function ModeToggle() {
         setTheme(newMode);
       });
     },
-    [resolvedTheme, setTheme],
+    [resolvedTheme, setTheme]
   );
 
   return (

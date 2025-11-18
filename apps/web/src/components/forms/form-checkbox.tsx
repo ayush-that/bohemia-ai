@@ -38,7 +38,7 @@ function FormCheckbox<
       name={name}
       render={({ field }) => (
         <FormItem
-          className={`flex flex-row items-start space-y-0 space-x-3 ${className}`}
+          className={`flex flex-row items-start space-x-3 space-y-0 ${className}`}
         >
           <FormControl>
             <Checkbox

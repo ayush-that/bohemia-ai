@@ -61,7 +61,7 @@ export default function AgentDetailsPage() {
       const session = await liveKitAPI.createSession(
         agent.id,
         undefined,
-        token,
+        token
       );
       toast.success("Test session created!", { id: "test-agent" });
       // Avoid huge query strings that can trigger 431 header errors.
@@ -76,7 +76,7 @@ export default function AgentDetailsPage() {
           roomName: session.roomName,
           accessToken: session.accessToken,
           wsUrl: session.wsUrl,
-        }),
+        })
       );
       router.push(`/dashboard/agents/${agent.id}/test`);
     } catch (error) {
@@ -89,71 +89,71 @@ export default function AgentDetailsPage() {
 
   if (loading) {
     return (
-      <div className="space-y-6 px-4 pb-8 md:px-6 min-w-0">
+      <div className="min-w-0 space-y-6 px-4 pb-8 md:px-6">
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <div className="h-8 w-64 bg-muted animate-pulse rounded" />
-              <div className="h-5 w-16 bg-muted animate-pulse rounded" />
+              <div className="bg-muted h-8 w-64 animate-pulse rounded" />
+              <div className="bg-muted h-5 w-16 animate-pulse rounded" />
             </div>
-            <div className="h-4 w-[40ch] bg-muted animate-pulse rounded" />
-            <div className="h-3 w-48 bg-muted animate-pulse rounded" />
+            <div className="bg-muted h-4 w-[40ch] animate-pulse rounded" />
+            <div className="bg-muted h-3 w-48 animate-pulse rounded" />
           </div>
           <div className="flex items-center gap-2">
-            <div className="h-9 w-20 bg-muted animate-pulse rounded" />
-            <div className="h-9 w-28 bg-muted animate-pulse rounded" />
+            <div className="bg-muted h-9 w-20 animate-pulse rounded" />
+            <div className="bg-muted h-9 w-28 animate-pulse rounded" />
           </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="p-6 rounded border">
-            <div className="h-5 w-40 bg-muted animate-pulse rounded mb-4" />
+          <div className="rounded border p-6">
+            <div className="bg-muted mb-4 h-5 w-40 animate-pulse rounded" />
             <div className="space-y-3">
               <div className="flex justify-between">
-                <div className="h-4 w-24 bg-muted animate-pulse rounded" />
-                <div className="h-4 w-40 bg-muted animate-pulse rounded" />
+                <div className="bg-muted h-4 w-24 animate-pulse rounded" />
+                <div className="bg-muted h-4 w-40 animate-pulse rounded" />
               </div>
               <div className="flex justify-between">
-                <div className="h-4 w-24 bg-muted animate-pulse rounded" />
-                <div className="h-4 w-40 bg-muted animate-pulse rounded" />
+                <div className="bg-muted h-4 w-24 animate-pulse rounded" />
+                <div className="bg-muted h-4 w-40 animate-pulse rounded" />
               </div>
               <div className="flex justify-between">
-                <div className="h-4 w-24 bg-muted animate-pulse rounded" />
-                <div className="h-4 w-40 bg-muted animate-pulse rounded" />
+                <div className="bg-muted h-4 w-24 animate-pulse rounded" />
+                <div className="bg-muted h-4 w-40 animate-pulse rounded" />
               </div>
               <div className="flex justify-between">
-                <div className="h-4 w-32 bg-muted animate-pulse rounded" />
-                <div className="h-4 w-16 bg-muted animate-pulse rounded" />
+                <div className="bg-muted h-4 w-32 animate-pulse rounded" />
+                <div className="bg-muted h-4 w-16 animate-pulse rounded" />
               </div>
             </div>
           </div>
-          <div className="p-6 rounded border">
-            <div className="h-5 w-32 bg-muted animate-pulse rounded mb-4" />
+          <div className="rounded border p-6">
+            <div className="bg-muted mb-4 h-5 w-32 animate-pulse rounded" />
             <div className="space-y-3">
               <div className="flex justify-between">
-                <div className="h-4 w-32 bg-muted animate-pulse rounded" />
-                <div className="h-4 w-24 bg-muted animate-pulse rounded" />
+                <div className="bg-muted h-4 w-32 animate-pulse rounded" />
+                <div className="bg-muted h-4 w-24 animate-pulse rounded" />
               </div>
               <div className="flex justify-between">
-                <div className="h-4 w-32 bg-muted animate-pulse rounded" />
-                <div className="h-4 w-24 bg-muted animate-pulse rounded" />
+                <div className="bg-muted h-4 w-32 animate-pulse rounded" />
+                <div className="bg-muted h-4 w-24 animate-pulse rounded" />
               </div>
               <div className="flex justify-between">
-                <div className="h-4 w-32 bg-muted animate-pulse rounded" />
-                <div className="h-4 w-24 bg-muted animate-pulse rounded" />
+                <div className="bg-muted h-4 w-32 animate-pulse rounded" />
+                <div className="bg-muted h-4 w-24 animate-pulse rounded" />
               </div>
             </div>
           </div>
         </div>
 
         {/* Instructions skeleton */}
-        <div className="p-6 rounded border space-y-3">
-          <div className="h-5 w-48 bg-muted animate-pulse rounded" />
-          <div className="space-y-2 max-h-[60vh] overflow-hidden">
+        <div className="space-y-3 rounded border p-6">
+          <div className="bg-muted h-5 w-48 animate-pulse rounded" />
+          <div className="max-h-[60vh] space-y-2 overflow-hidden">
             {Array.from({ length: 10 }).map((_, i) => (
               <div
                 key={i}
-                className="h-4 w-full bg-muted animate-pulse rounded"
+                className="bg-muted h-4 w-full animate-pulse rounded"
                 style={{ width: `${80 - (i % 4) * 10}%` }}
               />
             ))}
@@ -176,7 +176,7 @@ export default function AgentDetailsPage() {
   }
 
   return (
-    <div className="space-y-6 px-4 pb-8 md:px-6 min-w-0">
+    <div className="min-w-0 space-y-6 px-4 pb-8 md:px-6">
       <div className="flex items-start justify-between gap-4">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight">
@@ -187,11 +187,11 @@ export default function AgentDetailsPage() {
               {agent.description}
             </p>
           )}
-          <div className="text-xs text-muted-foreground font-mono space-x-2">
+          <div className="text-muted-foreground space-x-2 font-mono text-xs">
             <span>Record ID: {agent.id}</span>
             <span>LiveKit: {agent.livekitAgentName ?? "Not linked"}</span>
           </div>
-          <div className="text-xs text-muted-foreground">
+          <div className="text-muted-foreground text-xs">
             Created {format(new Date(agent.createdAt), "MMM d, yyyy")} • Updated{" "}
             {format(new Date(agent.updatedAt), "MMM d, yyyy")}
           </div>
@@ -209,7 +209,7 @@ export default function AgentDetailsPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="p-6 space-y-4">
+        <Card className="space-y-4 p-6">
           <h2 className="text-lg font-medium">Model Configuration</h2>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
@@ -237,7 +237,7 @@ export default function AgentDetailsPage() {
           </div>
         </Card>
 
-        <Card className="p-6 space-y-4">
+        <Card className="space-y-4 p-6">
           <h2 className="text-lg font-medium">Behavior</h2>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
@@ -258,9 +258,9 @@ export default function AgentDetailsPage() {
         </Card>
       </div>
 
-      <Card className="p-6 space-y-3">
+      <Card className="space-y-3 p-6">
         <h2 className="text-lg font-medium">System Instructions</h2>
-        <pre className="whitespace-pre-wrap wrap-break-word text-sm bg-muted/40 p-3 rounded border max-h-[60vh] overflow-auto">
+        <pre className="wrap-break-word bg-muted/40 max-h-[60vh] overflow-auto whitespace-pre-wrap rounded border p-3 text-sm">
           {agent.instructions}
         </pre>
       </Card>

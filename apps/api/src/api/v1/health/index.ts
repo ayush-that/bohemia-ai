@@ -6,4 +6,3 @@ const app = new Hono();
 app.route("/", check);
 
 export default app;
-

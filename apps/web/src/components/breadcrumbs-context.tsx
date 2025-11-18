@@ -8,12 +8,12 @@ type BreadcrumbContextType = {
 };
 
 const BreadcrumbContext = createContext<BreadcrumbContextType | undefined>(
-  undefined,
+  undefined
 );
 
 export function BreadcrumbProvider({ children }: { children: ReactNode }) {
   const [dynamicTitles, setDynamicTitles] = useState<Map<string, string>>(
-    new Map(),
+    new Map()
   );
 
   const setTitle = (path: string, title: string) => {
@@ -35,7 +35,7 @@ export function useBreadcrumbContext() {
   const context = useContext(BreadcrumbContext);
   if (!context) {
     throw new Error(
-      "useBreadcrumbContext must be used within BreadcrumbProvider",
+      "useBreadcrumbContext must be used within BreadcrumbProvider"
     );
   }
   return context;

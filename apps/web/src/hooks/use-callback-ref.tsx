@@ -1,7 +1,7 @@
 import * as React from "react";
 
 function useCallbackRef<T extends (...args: never[]) => unknown>(
-  callback: T | undefined,
+  callback: T | undefined
 ): T {
   const callbackRef = React.useRef(callback);
 
@@ -11,7 +11,7 @@ function useCallbackRef<T extends (...args: never[]) => unknown>(
 
   return React.useMemo(
     () => ((...args) => callbackRef.current?.(...args)) as T,
-    [],
+    []
   );
 }
 

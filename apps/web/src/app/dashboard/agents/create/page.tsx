@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function CreateAgentPage() {
   return (
     <PageContainer scrollable>
-      <div className="w-full max-w-5xl mx-auto space-y-4">
+      <div className="mx-auto w-full max-w-5xl space-y-4">
         <div className="flex items-start justify-between">
           <Heading
             title="Create Voice Agent"

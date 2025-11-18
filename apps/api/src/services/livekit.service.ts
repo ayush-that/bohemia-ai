@@ -43,7 +43,7 @@ export class LiveKitService {
     identity: string,
     roomName: string,
     metadata?: string,
-    roomConfig?: RoomConfiguration,
+    roomConfig?: RoomConfiguration
   ): Promise<string> {
     const token = new AccessToken(this.apiKey, this.secret, {
       identity,
@@ -118,7 +118,7 @@ export class LiveKitService {
       destinationSids?: string[];
       reliable?: boolean; // true for RELIABLE, false for LOSSY
       topic?: string;
-    },
+    }
   ): Promise<void> {
     try {
       // Convert string data to Uint8Array
@@ -153,7 +153,7 @@ export class LiveKitService {
   async updateParticipantMetadata(
     roomName: string,
     identity: string,
-    metadata: string,
+    metadata: string
   ): Promise<void> {
     await this.roomClient.updateParticipant(roomName, identity, {
       metadata,
@@ -163,7 +163,7 @@ export class LiveKitService {
   // Handle webhook events from LiveKit
   async handleWebhook(
     body: string,
-    authorization?: string,
+    authorization?: string
   ): Promise<WebhookEvent | null> {
     try {
       return this.webhookReceiver.receive(body, authorization);
@@ -194,7 +194,7 @@ export class LiveKitService {
         // Track participant join
         if (event.participant && event.room) {
           console.log(
-            `Participant ${event.participant.identity} joined room ${event.room.name}`,
+            `Participant ${event.participant.identity} joined room ${event.room.name}`
           );
         }
         break;
@@ -203,7 +203,7 @@ export class LiveKitService {
         // Track participant leave
         if (event.participant && event.room) {
           console.log(
-            `Participant ${event.participant.identity} left room ${event.room.name}`,
+            `Participant ${event.participant.identity} left room ${event.room.name}`
           );
         }
         break;
@@ -264,7 +264,7 @@ export class LiveKitService {
   async createAgentSession(
     agentId: string,
     userId: string,
-    isTest: boolean = false,
+    isTest: boolean = false
   ): Promise<{
     sessionId: string;
     roomName: string;
@@ -329,7 +329,7 @@ export class LiveKitService {
       `user-${userId}`,
       roomName,
       JSON.stringify({ userId, isTest }),
-      roomConfig,
+      roomConfig
     );
 
     return {

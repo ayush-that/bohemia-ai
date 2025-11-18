@@ -45,7 +45,7 @@ const columns: ColumnDef<VoiceAgent>[] = [
       <div className="flex flex-col">
         <span className="font-medium">{row.original.name}</span>
         {row.original.description && (
-          <span className="text-sm text-muted-foreground truncate max-w-xs">
+          <span className="text-muted-foreground max-w-xs truncate text-sm">
             {row.original.description}
           </span>
         )}
@@ -58,7 +58,7 @@ const columns: ColumnDef<VoiceAgent>[] = [
     cell: ({ row }) => (
       <div className="flex flex-col">
         <span className="font-mono text-sm">{row.original.llmProvider}</span>
-        <span className="text-xs text-muted-foreground">
+        <span className="text-muted-foreground text-xs">
           {row.original.llmModel}
         </span>
       </div>
@@ -77,7 +77,7 @@ const columns: ColumnDef<VoiceAgent>[] = [
     cell: ({ row }) => (
       <div className="flex flex-col">
         <span className="font-mono text-sm">{row.original.ttsProvider}</span>
-        <span className="text-xs text-muted-foreground">
+        <span className="text-muted-foreground text-xs">
           {row.original.ttsVoice}
         </span>
       </div>
@@ -335,7 +335,7 @@ export function AgentsTable() {
           className="w-[320px]"
         />
 
-        <div className="text-sm text-muted-foreground">
+        <div className="text-muted-foreground text-sm">
           {pagination.total} total agents
         </div>
       </div>
@@ -365,7 +365,7 @@ export function AgentsTable() {
                   <TableRow key={i}>
                     {columns.map((_, j) => (
                       <TableCell key={j}>
-                        <div className="h-4 bg-muted animate-pulse rounded" />
+                        <div className="bg-muted h-4 animate-pulse rounded" />
                       </TableCell>
                     ))}
                   </TableRow>
@@ -402,7 +402,7 @@ export function AgentsTable() {
       </div>
 
       <div className="flex items-center justify-between space-x-2 py-4">
-        <div className="text-sm text-muted-foreground">
+        <div className="text-muted-foreground text-sm">
           Showing{" "}
           {table.getState().pagination.pageIndex *
             table.getState().pagination.pageSize +

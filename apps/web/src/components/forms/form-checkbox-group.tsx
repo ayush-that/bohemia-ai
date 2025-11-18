@@ -71,8 +71,8 @@ function FormCheckboxGroup<
                       } else {
                         field.onChange(
                           currentValues.filter(
-                            (value: string) => value !== option.value,
-                          ),
+                            (value: string) => value !== option.value
+                          )
                         );
                       }
                     }}
@@ -81,7 +81,7 @@ function FormCheckboxGroup<
                 </FormControl>
                 <label
                   htmlFor={`${name}-${option.value}`}
-                  className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                   {option.label}
                 </label>

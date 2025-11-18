@@ -233,10 +233,10 @@ function LiveKitTester({
   return (
     <div className="w-full space-y-6">
       <div className="w-full py-4">
-        <div className="relative max-w-xl w-full mx-auto flex items-center flex-col gap-2">
+        <div className="relative mx-auto flex w-full max-w-xl flex-col items-center gap-2">
           <button
             className={cn(
-              "group w-16 h-16 rounded-xl flex items-center justify-center transition-colors",
+              "group flex h-16 w-16 items-center justify-center rounded-xl transition-colors",
               connected && publishing
                 ? "bg-none"
                 : "bg-none hover:bg-black/5 dark:hover:bg-white/5"
@@ -246,11 +246,11 @@ function LiveKitTester({
           >
             {connected && publishing ? (
               <div
-                className="w-6 h-6 rounded-sm animate-spin bg-black dark:bg-white cursor-pointer pointer-events-auto"
+                className="pointer-events-auto h-6 w-6 animate-spin cursor-pointer rounded-sm bg-black dark:bg-white"
                 style={{ animationDuration: "3s" }}
               />
             ) : (
-              <Mic className="w-6 h-6 text-black/90 dark:text-white/90" />
+              <Mic className="h-6 w-6 text-black/90 dark:text-white/90" />
             )}
           </button>
 
@@ -265,15 +265,15 @@ function LiveKitTester({
             {formatTime(time)}
           </span>
 
-          <div className="h-4 w-64 flex items-center justify-center gap-0.5">
+          <div className="flex h-4 w-64 items-center justify-center gap-0.5">
             {[...Array(48)].map((_, i) => (
               <div
                 key={i}
                 className={cn(
                   "w-0.5 rounded-full transition-all duration-300",
                   connected && publishing
-                    ? "bg-black/50 dark:bg-white/50 animate-pulse"
-                    : "bg-black/10 dark:bg-white/10 h-1"
+                    ? "animate-pulse bg-black/50 dark:bg-white/50"
+                    : "h-1 bg-black/10 dark:bg-white/10"
                 )}
                 style={
                   connected && publishing && isClient
@@ -298,7 +298,7 @@ function LiveKitTester({
       </div>
 
       {error && (
-        <div className="text-sm text-red-500 wrap-break-word">
+        <div className="wrap-break-word text-sm text-red-500">
           Error: {error}
         </div>
       )}
@@ -306,7 +306,7 @@ function LiveKitTester({
       {audioUnlockNeeded && (
         <div className="flex justify-center">
           <button
-            className="px-3 py-1.5 rounded-md border text-sm hover:bg-accent transition-colors bg-yellow-500/10 border-yellow-500/50"
+            className="hover:bg-accent rounded-md border border-yellow-500/50 bg-yellow-500/10 px-3 py-1.5 text-sm transition-colors"
             onClick={async () => {
               try {
                 if (remoteAudioRef.current) {
@@ -549,7 +549,7 @@ export default function AgentTestPage() {
 
   if (loading || initializing) {
     return (
-      <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
+      <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center">
         <Loader
           title="Creating session..."
           subtitle="Please wait while we prepare your test environment"
@@ -561,22 +561,22 @@ export default function AgentTestPage() {
 
   if (!token || !wsUrl) {
     return (
-      <div className="p-6 space-y-6 max-w-6xl mx-auto">
+      <div className="mx-auto max-w-6xl space-y-6 p-6">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight">Test</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Agent{" "}
             <span className="font-mono">
               {agentName || dbAgentId || "Agent"}
             </span>
           </p>
         </div>
-        <div className="rounded-md border p-6 space-y-4 text-center">
+        <div className="space-y-4 rounded-md border p-6 text-center">
           <p className="text-muted-foreground">
             Failed to create test session. Please try again.
           </p>
           <button
-            className="px-4 py-2 rounded bg-primary text-primary-foreground hover:bg-primary/90"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded px-4 py-2"
             onClick={() => window.location.reload()}
           >
             Retry
@@ -588,14 +588,14 @@ export default function AgentTestPage() {
 
   return (
     <div className="flex h-[calc(100vh-4rem)] overflow-hidden">
-      <div className="flex-1 flex flex-col border-r">
-        <div className="p-6 border-b">
+      <div className="flex flex-1 flex-col border-r">
+        <div className="border-b p-6">
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <h2 className="text-xl font-semibold tracking-tight">
                 System Instructions
               </h2>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Edit the agent's behavior and test in real-time
               </p>
             </div>
@@ -620,14 +620,14 @@ export default function AgentTestPage() {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col">
-        <div className="p-6 border-b">
+      <div className="flex flex-1 flex-col">
+        <div className="border-b p-6">
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <h2 className="text-xl font-semibold tracking-tight">
                 Live Test
               </h2>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 {agentName || dbAgentId}
                 {livekitAgentName ? ` (${livekitAgentName})` : ""}
               </p>
@@ -642,7 +642,7 @@ export default function AgentTestPage() {
           </div>
         </div>
 
-        <div className="flex-1 overflow-auto p-6 flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-1 flex-col items-center justify-center gap-4 overflow-auto p-6">
           <LiveKitTester
             token={token}
             wsUrl={wsUrl}
