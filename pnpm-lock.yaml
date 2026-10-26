@@ -66,10 +66,10 @@ importers:
         version: 2.22.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@hono/node-server':
         specifier: ^1.19.6
-        version: 1.19.6(hono@4.10.6)
+        version: 1.19.6(hono@4.13.11)
       '@hono/zod-validator':
         specifier: ^0.7.4
-        version: 0.7.4(hono@4.10.6)(zod@4.6.6)
+        version: 0.7.4(hono@4.13.11)(zod@4.6.6)
       '@livekit/agents':
         specifier: ^1.0.18
         version: 1.0.18(@livekit/rtc-node@0.13.21)(zod@4.6.6)
@@ -95,8 +95,8 @@ importers:
         specifier: ^0.44.7
         version: 0.44.7(@types/pg@8.15.6)(postgres@3.4.7)
       hono:
-        specifier: ^4.8.10
-        version: 4.10.6
+        specifier: ^4.13.11
+        version: 4.13.11
       livekit-server-sdk:
         specifier: ^2.14.1
         version: 2.14.1
@@ -2732,8 +2732,8 @@ packages:
   help-me@5.0.0:
     resolution: {integrity: sha512-7xgomUX6ADmcYzFik0HzAxh/73YlKR9bmFzf51CZwR+b6YtzU2m0u49hQCqV6SvlqIqsaxovfwdvbnsw3b/zpg==}
 
-  hono@4.10.6:
-    resolution: {integrity: sha512-BIdolzGpDO9MQ4nu3AUuDwHZZ+KViNm+EZ75Ae55eMXMqLVhDFqEMXxtUe9Qh8hjL+pIna/frs2j6Y2yD5Ua/g==}
+  hono@4.13.11:
+    resolution: {integrity: sha512-/SMX/RQNJn7oNmFwH6DtwDqcrzZU2otm1FD6OJe2cWF6cfy/F8hq0XVBv7xW3FTJshRQwuBnXHDq2kNsdZnshg==}
     engines: {node: '>=16.9.0'}
 
   hyphenate-style-name@1.1.0:
@@ -4013,13 +4013,13 @@ snapshots:
 
   '@floating-ui/utils@0.2.10': {}
 
-  '@hono/node-server@1.19.6(hono@4.10.6)':
+  '@hono/node-server@1.19.6(hono@4.13.11)':
     dependencies:
-      hono: 4.10.6
+      hono: 4.13.11
 
-  '@hono/zod-validator@0.7.4(hono@4.10.6)(zod@4.6.6)':
+  '@hono/zod-validator@0.7.4(hono@4.13.11)(zod@4.6.6)':
     dependencies:
-      hono: 4.10.6
+      hono: 4.13.11
       zod: 4.6.6
 
   '@hookform/resolvers@5.2.2(react-hook-form@7.66.0(react@19.0.0))':
@@ -5737,7 +5737,7 @@ snapshots:
 
   help-me@5.0.0: {}
 
-  hono@4.10.6: {}
+  hono@4.13.11: {}
 
   hyphenate-style-name@1.1.0: {}
 
