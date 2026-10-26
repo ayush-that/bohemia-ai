@@ -22,7 +22,7 @@
     "@repo/constants": "workspace:*",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",
-    "hono": "^4.8.10",
+    "hono": "^4.13.11",
     "livekit-server-sdk": "^2.14.1",
     "node-fetch": "^3.3.2",
     "postgres": "^3.4.7",
